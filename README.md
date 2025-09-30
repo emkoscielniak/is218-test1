@@ -98,3 +98,21 @@ If any step fails, you lose points for that category.
 
 * Push to GitHub/GitLab and share the repo URL **OR** upload a zip including `.git` history.
 * Your **last commit** must be before the 30-minute deadline.
+
+## How to run locally
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Lint
+pylint --errors-only src
+
+# Tests (with pylint plugin)
+PYTHONPATH=src pytest tests -v
+PYTHONPATH=src pytest --pylint src -v
+
+# Coverage
+PYTHONPATH=src coverage run -m pytest tests
+coverage report --fail-under=100
