@@ -2,3 +2,7 @@
 TinyTools Calculator library: add, subtract, multiply, divide.
 """
 from __future__ import annotations
+
+def add(a: float, b: float) -> float:
+    """Return a + b."""
+    return a + b
